@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Navigate to the Admin Dashboard (Laravel App)
                 // Using the assumed Vercel URL structure based on user's repo name
                 // Ideally this should be dynamic or env var, but static site has limits.
-                window.location.href = 'https://devseasglobal.vercel.app/admin/login';
+                window.location.href = 'https://devseasglobal1.vercel.app/admin/login';
             } else {
                 clickTimer = setTimeout(() => {
                     // Navigate to Home if not 3 clicks
