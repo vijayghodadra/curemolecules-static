@@ -19,13 +19,19 @@
         <div class="container navbar">
             <a href="index.html" class="logo-container" style="text-decoration: none;">
                 <img src="assets/images/DEVSEAS logo.png" alt="Cure Molecules" class="site-logo"
-                    style="height: 50px; width: 40;">
+                    style="height: 40px; width: 40">
             </a>
+
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
 
             <ul class="nav-menu">
                 <li><a href="index.html" class="active">Home</a></li>
                 <li class="nav-item">
-                    <a href="products.html">Products <i class="fas fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <!-- Mobile: Click to toggle dropdown, Desktop: Hover -->
+                    <a href="#" onclick="toggleDropdown(event, this)">Products <i class="fas fa-chevron-down"
+                            style="font-size: 0.7em;"></i></a>
                     <div class="dropdown-menu">
                         <a href="products.html" class="dropdown-item">All Products</a>
                         <a href="products.html" class="dropdown-item">Antacids & Laxatives</a>
@@ -36,7 +42,8 @@
                 </li>
                 <li><a href="about.html">About Us</a></li>
                 <li class="nav-item">
-                    <a href="services.html">Services <i class="fas fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <a href="#" onclick="toggleDropdown(event, this)">Services <i class="fas fa-chevron-down"
+                            style="font-size: 0.7em;"></i></a>
                     <div class="dropdown-menu">
                         <a href="services.html" class="dropdown-item">Chemical Trading</a>
                         <a href="quality.html" class="dropdown-item">Quality Assurance</a>
@@ -50,36 +57,77 @@
                 <i class="fas fa-sun"></i>
             </div>
         </div>
+
+        <script>
+            // Mobile Menu Toggle
+            const menuToggle = document.getElementById('mobile-menu');
+            const navMenu = document.querySelector('.nav-menu');
+
+            menuToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                const icon = menuToggle.querySelector('i');
+                if (navMenu.classList.contains('active')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+
+            // Mobile Dropdown Toggle
+            function toggleDropdown(e, link) {
+                if (window.innerWidth <= 992) {
+                    e.preventDefault();
+                    const parent = link.parentElement;
+                    parent.classList.toggle('active');
+
+                    // Close other dropdowns
+                    document.querySelectorAll('.nav-item').forEach(item => {
+                        if (item !== parent) item.classList.remove('active');
+                    });
+                }
+            }
+        </script>
     </header>
 
     <section class="hero">
         <div class="container">
-            <div class="hero-content" data-aos="fade-up">
-                <h1>CureMolecules – High-Purity<br>Pharmaceutical APIs & Excipients</h1>
-                <p class="company-name-hero">Cure Molecules Private Limited – Your Trusted Manufacturing Partner</p>
+            <div class="hero-wrapper" style="display:flex; align-items:center; gap:2rem;">
+                <!-- Left: Text Content -->
+                <div class="hero-content" data-aos="fade-right" style="flex:1;">
+                    <h1>DevSeas Global</h1>
+                    <p class="company-name-hero">"Global Reach, Diverse Products"</p>
+                    <p class="company-name-hero" style="font-style: italic;">"Delivering Quality Across Continents."</p>
 
-                <div class="info-box" data-aos="fade-up" data-aos-delay="200">
-                    <p>
-                        <i class="fas fa-check-circle" style="color: var(--primary);"></i>
-                        <span class="highlight">CureMolecules specializes in IP/BP/USP grade</span> pharmaceutical APIs,
-                        antacids, electrolytes, and excipients. Cure Molecules delivers premium quality chemicals for
-                        pharmaceutical, nutraceutical, and food industries worldwide.
-                    </p>
+                    <div class="info-box" data-aos="fade-up" data-aos-delay="200">
+                        <p>
+                            <i class="fas fa-check-circle" style="color: var(--primary);"></i>
+                            <span class="highlight">DevSeas Global specializes in premium export solutions</span> —
+                            connecting international markets with reliable, efficient, and high-quality products
+                            tailored to
+                            every business need.
+                        </p>
+                    </div>
+
+                    <div class="badges" data-aos="fade-up" data-aos-delay="400">
+                        <div class="badge badge-ip"><i class="fas fa-check"></i> IP Grade</div>
+                        <div class="badge badge-bp"><i class="fas fa-check"></i> BP Grade</div>
+                        <div class="badge badge-usp"><i class="fas fa-check"></i> USP Grade</div>
+                    </div>
+
+                    <div class="cta-buttons" data-aos="fade-up" data-aos-delay="600">
+                        <a href="products.html" class="btn btn-primary">View Products</a>
+                        <a href="contact.html" class="btn btn-outline">Contact Us</a>
+                    </div>
                 </div>
 
-                <div class="badges" data-aos="fade-up" data-aos-delay="400">
-                    <div class="badge badge-ip"><i class="fas fa-check"></i> IP Grade</div>
-                    <div class="badge badge-bp"><i class="fas fa-check"></i> BP Grade</div>
-                    <div class="badge badge-usp"><i class="fas fa-check"></i> USP Grade</div>
-                </div>
 
-                <div class="cta-buttons" data-aos="fade-up" data-aos-delay="600">
-                    <a href="products.html" class="btn btn-primary">View Products</a>
-                    <a href="contact.html" class="btn btn-outline">Contact Us</a>
-                </div>
+
             </div>
         </div>
     </section>
+
 
     <!-- Product Categories Section -->
     <section class="categories-section">
@@ -91,38 +139,54 @@
             </div>
 
             <div class="category-grid">
-                <!-- Card 1: Antacids -->
+                <!-- Card 1: Agri Commodities -->
                 <div class="category-card card-antacids" data-aos="fade-up" data-aos-delay="100">
-                    <div class="cat-icon"><i class="fas fa-capsules"></i></div>
-                    <h3>Antacids & Laxatives</h3>
-                    <p>Dried aluminium hydroxide gel, magnesium hydroxide, magnesium trisilicate and carbonate compounds
-                    </p>
-                    <a href="products.html" class="cat-badge">5+ Products</a>
+                    <div class="cat-icon"><i class="fas fa-seedling"></i></div>
+                    <h3>Agri Commodities</h3>
+                    <p>We specializes in exporting top-quality agri commodities, including grains, pulses, and spices.
+                        Sourced from reliable farms, our products guarantee exceptional quality and sustainability for
+                        various markets.</p>
+                    <a href="products.html" class="cat-badge">View Products</a>
                 </div>
 
-                <!-- Card 2: Food & Pharma -->
+                <!-- Card 2: Plastic Packaging -->
                 <div class="category-card card-food" data-aos="fade-up" data-aos-delay="200">
-                    <div class="cat-icon"><i class="fas fa-jar"></i></div>
-                    <h3>Food & Beverages & Pharmaceuticals</h3>
-                    <p>Citric acid, dextrose, sodium chloride, potassium chloride, and citrate compounds</p>
-                    <a href="products.html" class="cat-badge">8+ Products</a>
+                    <div class="cat-icon"><i class="fas fa-box"></i></div>
+                    <h3>Plastic Packaging</h3>
+                    <p>We offers high-quality plastic packaging solutions designed for durability, versatility, and
+                        sustainability. Our range includes bags, films, and containers tailored to meet diverse
+                        industrial and consumer needs.</p>
+                    <a href="products.html" class="cat-badge">View Products</a>
                 </div>
 
-                <!-- Card 3: ORS -->
+                <!-- Card 3: Chemical -->
                 <div class="category-card card-ors" data-aos="fade-up" data-aos-delay="300">
-                    <div class="cat-icon"><i class="fas fa-syringe"></i></div>
-                    <h3>ORS & Injectables</h3>
-                    <p>Dextrose, potassium chloride, sodium chloride, and citrate compounds for medical solutions</p>
-                    <a href="products.html" class="cat-badge">6+ Products</a>
+                    <div class="cat-icon"><i class="fas fa-flask"></i></div>
+                    <h3>Chemical</h3>
+                    <p>Devseas Global offers a wide range of high-quality chemical products tailored for various
+                        industries, including agriculture, manufacturing, and pharmaceuticals, ensuring safety,
+                        efficacy, and reliability.</p>
+                    <a href="products.html" class="cat-badge">View Products</a>
                 </div>
 
-                <!-- Card 4: Pharma & Nutra -->
+                <!-- Card 4: Packaging -->
                 <div class="category-card card-pharma" data-aos="fade-up" data-aos-delay="400">
-                    <div class="cat-icon"><i class="fas fa-dna"></i></div>
-                    <h3>Pharmaceuticals & Nutraceuticals & Cosmetics</h3>
-                    <p>Aluminium magnesium silicate, magnesium compounds, zinc sulphates, and specialized ingredients
-                    </p>
-                    <a href="products.html" class="cat-badge">10+ Products</a>
+                    <div class="cat-icon"><i class="fas fa-utensils"></i></div>
+                    <h3>Packaging</h3>
+                    <p>Specializes in high-quality disposable fast food paper products, including trays, bags, and
+                        wrappers. Our eco-friendly solutions cater to the fast-paced food industry, ensuring food safety
+                        and ease of use.</p>
+                    <a href="products.html" class="cat-badge">View Products</a>
+                </div>
+
+                <!-- Card 5: Medicare -->
+                <div class="category-card card-antacids" data-aos="fade-up" data-aos-delay="500">
+                    <div class="cat-icon"><i class="fas fa-heartbeat"></i></div>
+                    <h3>Medicare</h3>
+                    <p>Devseas Global provides a comprehensive range of medicare products, prioritizing safety,
+                        reliability, and quality. Our solutions cater to diverse healthcare needs, ensuring efficient
+                        support for medical professionals.</p>
+                    <a href="products.html" class="cat-badge">View Products</a>
                 </div>
             </div>
         </div>
@@ -144,8 +208,10 @@
                         <span class="grade-badge">IP/BP/USP</span>
                     </div>
                     <div style="text-align: center; margin-bottom: 20px;">
-                        <img src="https://via.placeholder.com/80/f472b6/ffffff?text=Al" alt="Product"
-                            style="border-radius: 8px;">
+                        <div
+                            style="width:80px; height:80px; border-radius:50%; background:linear-gradient(135deg,#f472b6,#9333ea); display:inline-flex; align-items:center; justify-content:center;">
+                            <i class="fas fa-flask" style="font-size:32px; color:#fff;"></i>
+                        </div>
                     </div>
 
                     <h3 class="f-title">Dried Aluminium Hydroxide</h3>
@@ -172,8 +238,10 @@
                         <span class="grade-badge">IP/BP/USP</span>
                     </div>
                     <div style="text-align: center; margin-bottom: 20px;">
-                        <img src="https://via.placeholder.com/80/fbbf24/ffffff?text=Mg" alt="Product"
-                            style="border-radius: 8px;">
+                        <div
+                            style="width:80px; height:80px; border-radius:50%; background:linear-gradient(135deg,#fbbf24,#f97316); display:inline-flex; align-items:center; justify-content:center;">
+                            <i class="fas fa-vial" style="font-size:32px; color:#fff;"></i>
+                        </div>
                     </div>
 
                     <h3 class="f-title">Aluminium Hydroxide Paste</h3>
@@ -193,61 +261,9 @@
                     <a href="contact.html" class="btn btn-primary btn-full">Request Quote</a>
                 </div>
 
-                <!-- Product 3 -->
-                <div class="featured-card">
-                    <div style="display: flex; justify-content: space-between; margin-bottom: 20px;">
-                        <span class="stock-status">In Stock</span>
-                        <span class="grade-badge">IP/BP/USP</span>
-                    </div>
-                    <div style="text-align: center; margin-bottom: 20px;">
-                        <img src="https://via.placeholder.com/80/f97316/ffffff?text=Dx" alt="Product"
-                            style="border-radius: 8px;">
-                    </div>
 
-                    <h3 class="f-title">Dextrose Monohydrate</h3>
-                    <div class="f-meta">
-                        <span><strong>CAS:</strong> 5996-10-1</span>
-                        <span><strong>Category:</strong> Food & Pharma</span>
-                    </div>
-                    <p class="f-desc">Versatile glucose powder with excellent solubility. White, odorless crystalline
-                        powder with moderate sweetness.</p>
 
-                    <div class="app-tags">
-                        <span class="app-tag">Pharma Excipient</span>
-                        <span class="app-tag">Sweetener</span>
-                        <span class="app-tag">Energy Source</span>
-                    </div>
 
-                    <a href="contact.html" class="btn btn-primary btn-full">Request Quote</a>
-                </div>
-
-                <!-- Product 4 -->
-                <div class="featured-card">
-                    <div style="display: flex; justify-content: space-between; margin-bottom: 20px;">
-                        <span class="stock-status">In Stock</span>
-                        <span class="grade-badge">IP/BP/USP</span>
-                    </div>
-                    <div style="text-align: center; margin-bottom: 20px;">
-                        <img src="https://via.placeholder.com/80/e2e8f0/0f172a?text=DA" alt="Product"
-                            style="border-radius: 8px;">
-                    </div>
-
-                    <h3 class="f-title">Dextrose Anhydrous</h3>
-                    <div class="f-meta">
-                        <span><strong>CAS:</strong> 50-99-7</span>
-                        <span><strong>Category:</strong> ORS & Injectables</span>
-                    </div>
-                    <p class="f-desc">High-purity, water-free glucose powder for pharmaceutical and nutritional
-                        applications. Essential for IV solutions.</p>
-
-                    <div class="app-tags">
-                        <span class="app-tag">IV Solutions</span>
-                        <span class="app-tag">Tablet Excipient</span>
-                        <span class="app-tag">Energy Supplement</span>
-                    </div>
-
-                    <a href="contact.html" class="btn btn-primary btn-full">Request Quote</a>
-                </div>
 
                 <div class="featured-card">
                     <div style="display: flex; justify-content: space-between; margin-bottom: 20px;">
@@ -255,8 +271,10 @@
                         <span class="grade-badge">IP/BP/USP</span>
                     </div>
                     <div style="text-align: center; margin-bottom: 20px;">
-                        <img src="https://via.placeholder.com/80/e2e8f0/0f172a?text=DA" alt="Product"
-                            style="border-radius: 8px;">
+                        <div
+                            style="width:80px; height:80px; border-radius:50%; background:linear-gradient(135deg,#34d399,#059669); display:inline-flex; align-items:center; justify-content:center;">
+                            <i class="fas fa-seedling" style="font-size:32px; color:#fff;"></i>
+                        </div>
                     </div>
 
                     <h3 class="f-title">Dextrose Anhydrous</h3>
@@ -281,8 +299,10 @@
                         <span class="grade-badge">IP/BP/USP</span>
                     </div>
                     <div style="text-align: center; margin-bottom: 20px;">
-                        <img src="https://via.placeholder.com/80/e2e8f0/0f172a?text=DA" alt="Product"
-                            style="border-radius: 8px;">
+                        <div
+                            style="width:80px; height:80px; border-radius:50%; background:linear-gradient(135deg,#a78bfa,#7c3aed); display:inline-flex; align-items:center; justify-content:center;">
+                            <i class="fas fa-microscope" style="font-size:32px; color:#fff;"></i>
+                        </div>
                     </div>
 
                     <h3 class="f-title">Dextrose Anhydrous</h3>
@@ -310,7 +330,7 @@
         <div class="container">
             <div class="section-header" data-aos="fade-up">
                 <h2>Quality & Certifications</h2>
-                <p>At Cure Molecules Pvt. Ltd., quality is the foundation of our manufacturing excellence.</p>
+                <p>At DevSeas Global Pvt. Ltd., quality is the foundation of our manufacturing excellence.</p>
             </div>
 
             <p class="cert-text" data-aos="fade-up" data-aos-delay="100">
@@ -321,52 +341,36 @@
             </p>
 
             <div class="cert-grid">
-                <!-- ISO 9001 -->
+                <!-- HACCP -->
                 <div class="cert-card cert-iso9001" data-aos="fade-up" data-aos-delay="200">
-                    <div class="cert-icon"><i class="fas fa-trophy"></i></div>
-                    <h3>ISO 9001:2015</h3>
-                    <p>Quality Management System</p>
-                    <span class="valid-pill">Valid until 2025</span>
-                </div>
-
-                <!-- ISO 14001 -->
-                <div class="cert-card cert-iso14001" data-aos="fade-up" data-aos-delay="300">
-                    <div class="cert-icon"><i class="fas fa-seedling"></i></div>
-                    <h3>ISO 14001:2015</h3>
-                    <p>Environmental Management</p>
-                    <span class="valid-pill">Valid until 2025</span>
+                    <div class="cert-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>HACCP</h3>
+                    <p>Hazard Analysis Critical Control Point</p>
+                    <span class="valid-pill">Certified</span>
                 </div>
 
                 <!-- GMP -->
-                <div class="cert-card cert-gmp" data-aos="fade-up" data-aos-delay="400">
+                <div class="cert-card cert-gmp" data-aos="fade-up" data-aos-delay="300">
                     <div class="cert-icon"><i class="fas fa-check-square"></i></div>
                     <h3>GMP Certified</h3>
                     <p>Good Manufacturing Practice</p>
-                    <span class="valid-pill">Valid until 2024</span>
+                    <span class="valid-pill">Certified</span>
                 </div>
 
-                <!-- Halal -->
-                <div class="cert-card cert-halal" data-aos="fade-up" data-aos-delay="500">
-                    <div class="cert-icon"><i class="fas fa-moon"></i></div>
-                    <h3>Halal Certified</h3>
-                    <p>Halal Food Standards</p>
-                    <span class="valid-pill">Valid until 2024</span>
+                <!-- ISO 9001:2015 -->
+                <div class="cert-card cert-iso14001" data-aos="fade-up" data-aos-delay="400">
+                    <div class="cert-icon"><i class="fas fa-trophy"></i></div>
+                    <h3>ISO 9001:2015</h3>
+                    <p>Quality Management System</p>
+                    <span class="valid-pill">Certified</span>
                 </div>
 
-                <!-- FDA -->
-                <div class="cert-card cert-fda" data-aos="fade-up" data-aos-delay="600">
-                    <div class="cert-icon"><i class="fas fa-university"></i></div>
-                    <h3>FDA Registered</h3>
-                    <p>Food & Drug Administration</p>
-                    <span class="valid-pill">Valid until 2024</span>
-                </div>
-
-                <!-- Kosher -->
-                <div class="cert-card cert-kosher" data-aos="fade-up" data-aos-delay="700">
-                    <div class="cert-icon"><i class="fas fa-star-of-david"></i></div>
-                    <h3>KOSHER Certified</h3>
-                    <p>Kosher Food Standards</p>
-                    <span class="valid-pill">Valid until 2024</span>
+                <!-- IEC -->
+                <div class="cert-card cert-fda" data-aos="fade-up" data-aos-delay="500">
+                    <div class="cert-icon"><i class="fas fa-ship"></i></div>
+                    <h3>IEC</h3>
+                    <p>Import Export Code</p>
+                    <span class="valid-pill">Registered</span>
                 </div>
             </div>
         </div>
@@ -459,14 +463,13 @@
             <div class="footer-top">
                 <div class="footer-logo-col">
                     <div class="logo-container" style="background: transparent; color: white; padding: 0;">
-                        <i class="fas fa-cubes fa-2x" style="color: var(--primary);"></i>
-                        <div class="logo-text" style="color: white;">
-                            CURE<br>MOLECULES<br><small style="color: #94a3b8;">PRIVATE LIMITED</small>
-                        </div>
+                        <img src="assets/images/DEVSEAS logo.png" alt="DevSeas" style="height:40px; width:auto;">
+
                     </div>
-                    <p>Global leader in immediate relief antacid actives, electrolytes, and pharmaceutical excipients.
-                        Specializing in Aluminium, Magnesium and Potassium products with strict quality control and
-                        IP/BP/USP compliance.</p>
+                    <p>We are committed to empowering businesses worldwide by offering premium export solutions tailored
+                        to their unique needs. With extensive experience and a profound understanding of international
+                        markets, we take pride in delivering exceptional service, unmatched reliability, and outstanding
+                        value.</p>
                     <div class="social-icons">
                         <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
@@ -498,35 +501,43 @@
                     <ul class="contact-info-list">
                         <li>
                             <i class="fas fa-map-marker-alt"></i>
-                            <span>B-408, Rudra Arcade, Near Sunflower Women's Hospital – Helmet Cross Road, Memnagar,
-                                Ahmedabad – 380052</span>
+                            <span>FF-16 Kanha Luxuria, Savita Hospital Road, Parivar Char Rasta, Vadodara, Gujarat
+                                390025</span>
                         </li>
                         <li>
                             <i class="fas fa-phone-alt"></i>
-                            <span>+91–9725597101, +91–7383565553</span>
+                            <span>
+                                <a href="tel:+4915560547524" style="color: inherit; text-decoration: none;">+49 15560
+                                    547524</a>,
+                                <a href="tel:+916352322122" style="color: inherit; text-decoration: none;">+91 63523
+                                    22122</a>
+                            </span>
                         </li>
                         <li>
                             <i class="fas fa-envelope"></i>
-                            <span>divy@curemolecules.com</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-user"></i>
-                            <span>Mr. Divya Patel (Director)</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-user"></i>
-                            <span>Mr. Vishal Patel (Director)</span>
+                            <span>info@devseasglobal.com</span>
                         </li>
                     </ul>
                 </div>
             </div>
 
-            <div class="footer-bottom">
-                <p>2024 Cure Molecules Private Limited. All rights reserved.</p>
-                <div class="footer-bottom-links">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
-                    <a href="#">Quality Policy</a>
+            <div class="footer-bottom" style="flex-direction: column; gap: 15px;">
+                <div
+                    style="display: flex; justify-content: space-between; width: 100%; align-items: center; flex-wrap: wrap; gap: 10px;">
+                    <p style="margin: 0;">&copy; 2026 DevSeas Global. All rights reserved.</p>
+                    <div class="footer-bottom-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Quality Policy</a>
+                    </div>
+                </div>
+                <div class="powered-by"
+                    style="display: flex; align-items: center; gap: 10px; font-size: 0.9em; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 10px; width: 100%; justify-content: center;">
+                    <span style="color: #cbd5e1;">Powered by TejasKP AI Software</span>
+                    <a href="https://tejaskp.in/login" target="_blank" style="text-decoration: none;">
+                        <img src="assets/images/tejaskp_logo.png" alt="TejasKP AI Software"
+                            style="height: 25px; vertical-align: middle; filter: drop-shadow(0 0 2px rgba(255,255,255,0.3));">
+                    </a>
                 </div>
             </div>
         </div>
