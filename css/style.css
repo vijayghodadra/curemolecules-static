@@ -2868,3 +2868,153 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+
+/* ===========================
+   HOME PAGE MOBILE RESPONSIVE
+=========================== */
+
+/* Tablet: 768px */
+@media (max-width: 768px) {
+
+    /* Hero Section */
+    .hero-wrapper {
+        flex-direction: column !important;
+        text-align: center;
+        gap: 1.5rem !important;
+    }
+
+    .hero-content {
+        flex: unset !important;
+        width: 100%;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .badges {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .cta-buttons {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    /* Product Categories */
+    .category-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 15px;
+        padding: 0 10px;
+    }
+
+    .category-card {
+        padding: 25px 15px;
+    }
+
+    .category-card h3 {
+        font-size: 1.1rem;
+        min-height: unset;
+    }
+
+    /* Featured Products */
+    .featured-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        padding: 0 10px;
+    }
+
+    /* Stats Row */
+    .stats-flex {
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .stat-item-row {
+        flex: 0 0 40%;
+    }
+
+    /* Footer */
+    .footer-top {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 30px;
+    }
+}
+
+/* Mobile: 480px */
+@media (max-width: 480px) {
+
+    /* Hero */
+    .hero {
+        padding: 60px 0 40px;
+    }
+
+    .hero h1 {
+        font-size: 1.7rem;
+    }
+
+    .company-name-hero {
+        font-size: 0.95rem;
+    }
+
+    .info-box {
+        text-align: left;
+    }
+
+    .badges {
+        gap: 8px;
+    }
+
+    .badge {
+        font-size: 0.75rem;
+        padding: 5px 10px;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .cta-buttons .btn {
+        width: 100%;
+        max-width: 280px;
+        text-align: center;
+    }
+
+    /* Categories — Single column */
+    .category-grid {
+        grid-template-columns: 1fr !important;
+        padding: 0;
+    }
+
+    .category-card {
+        padding: 20px;
+    }
+
+    /* Featured Products — Single column */
+    .featured-grid {
+        grid-template-columns: 1fr !important;
+        padding: 0;
+    }
+
+    /* Stats */
+    .stat-item-row {
+        flex: 0 0 100%;
+    }
+
+    /* Footer — Stack all */
+    .footer-top {
+        grid-template-columns: 1fr !important;
+        gap: 20px;
+    }
+
+    .footer-logo-col,
+    .footer-col {
+        text-align: center;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+}
