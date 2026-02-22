@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (clickCount === 3) {
                 clearTimeout(clickTimer);
                 clickCount = 0;
-                window.location.href = 'http://127.0.0.1:8080/admin/login';
+                window.location.href = 'http://10.73.246.109:8080/admin/login';
             }
         });
         footerLogo.style.cursor = 'pointer';
