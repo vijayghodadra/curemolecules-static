@@ -3085,6 +3085,19 @@ footer {
     .commitment-title {
         font-size: 1.4rem;
     }
+
+    /* Center WhatsApp button on mobile */
+    .whatsapp-float {
+        left: 50%;
+        transform: translateX(-50%);
+        right: auto;
+        bottom: 20px;
+        z-index: 1000;
+    }
+
+    .whatsapp-float:hover {
+        transform: translateX(-50%) scale(1.1);
+    }
 }
 
 /* ===========================
