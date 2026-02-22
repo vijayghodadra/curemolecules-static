@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // Mobile Dropdown Toggle (Global function called by onclick)
 function toggleDropdown(e, link) {
     if (window.innerWidth <= 992) {
-        e.preventDefault();
+        // e.preventDefault(); // Removed because it stops navigation to the products.html page itself.
         const parent = link.parentElement;
         parent.classList.toggle('active');
 
