@@ -757,13 +757,8 @@ footer {
     }
 
     .nav-item.active .dropdown-menu {
-        display: block;
+        display: block !important;
         /* sub-menu toggle for mobile */
-    }
-
-    .nav-item:hover .dropdown-menu {
-        display: none;
-        /* Disable hover on mobile, rely on click */
     }
 
     /* Hero Adjustments */
