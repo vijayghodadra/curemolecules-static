@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (clickCount === 3) {
                 clearTimeout(clickTimer);
                 clickCount = 0;
-                window.location.href = 'http://10.73.246.109:8080/admin/login';
+                window.location.href = 'https://devseas-admin.loca.lt/admin/login';
             }
         });
         footerLogo.style.cursor = 'pointer';
