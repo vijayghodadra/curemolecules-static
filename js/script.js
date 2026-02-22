@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (clickCount === 3) {
                 clearTimeout(clickTimer);
                 clickCount = 0;
-                window.location.href = 'https://devseas-admin.loca.lt/admin/login';
+                window.location.href = 'https://aliena.serveo.net/admin/login';
             }
         });
         footerLogo.style.cursor = 'pointer';
