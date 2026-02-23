@@ -3170,3 +3170,39 @@ footer {
         width: max-content;
     }
 }
+
+/* --- Theme Contrast Fixes (Antigravity) --- */
+body.light-mode .hero h1,
+body.light-mode .company-name-hero,
+body.light-mode .hero p,
+body.light-mode .hero .info-box p,
+body.light-mode .hero .highlight {
+    color: #ffffff !important;
+}
+
+body.light-mode .hero .badge-ip { color: #86efac !important; }
+body.light-mode .hero .badge-bp { color: #93c5fd !important; }
+body.light-mode .hero .badge-usp { color: #d8b4fe !important; }
+
+/* Ensure other dark sections remain readable in light mode */
+body.light-mode .categories-section,
+body.light-mode .featured-section,
+body.light-mode .cert-section,
+body.light-mode .quality-commit-section {
+    background-color: var(--section-alt);
+}
+
+body.light-mode .category-card,
+body.light-mode .featured-card,
+body.light-mode .cert-card {
+    background-color: var(--card-bg);
+    border-color: var(--border-color);
+}
+
+body.light-mode .section-header h2,
+body.light-mode .category-card h3,
+body.light-mode .f-title,
+body.light-mode .cert-card h3 {
+    color: var(--text-white);
+}
+
