@@ -46,13 +46,18 @@ document.addEventListener('DOMContentLoaded', () => {
 // Mobile Dropdown Toggle (Global function called by onclick)
 function toggleDropdown(e, link) {
     if (window.innerWidth <= 992) {
-        // e.preventDefault(); // Removed because it stops navigation to the products.html page itself.
         const parent = link.parentElement;
-        parent.classList.toggle('active');
+        const dropdown = parent.querySelector('.dropdown-menu');
 
-        // Close other dropdowns
-        document.querySelectorAll('.nav-item').forEach(item => {
-            if (item !== parent) item.classList.remove('active');
-        });
+        // Only prevent navigation and show dropdown if a dropdown menu exists
+        if (dropdown) {
+            e.preventDefault();
+            parent.classList.toggle('active');
+
+            // Close other dropdowns
+            document.querySelectorAll('.nav-item').forEach(item => {
+                if (item !== parent) item.classList.remove('active');
+            });
+        }
     }
 }

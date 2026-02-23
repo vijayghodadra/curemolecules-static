@@ -25,7 +25,7 @@
             <ul class="nav-menu">
                 <li><a href="index.html">Home</a></li>
                 <li class="nav-item">
-                    <a href="products.html" class="active">Products <i class="fas fa-chevron-down"
+                    <a href="products.html" class="active" onclick="toggleDropdown(event, this)">Products <i class="fas fa-chevron-down"
                             style="font-size: 0.7em;"></i></a>
                     <div class="dropdown-menu">
                         <a href="products.html?category=all" class="dropdown-item">All Products</a>
@@ -38,7 +38,7 @@
                 </li>
                 <li><a href="about.html">About Us</a></li>
                 <li class="nav-item">
-                    <a href="services.html">Services <i class="fas fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <a href="services.html" onclick="toggleDropdown(event, this)">Services <i class="fas fa-chevron-down" style="font-size: 0.7em;"></i></a>
                     <div class="dropdown-menu">
                         <a href="services.html" class="dropdown-item">Chemical Trading</a>
                         <a href="quality.html" class="dropdown-item">Quality Assurance</a>
@@ -396,7 +396,7 @@
                     <h4 class="footer-heading">Quick Links</h4>
                     <ul>
                         <li><a href="about.html">About Us</a></li>
-                        <li><a href="products.html">Products</a></li>
+                        <li><a href="products.html" onclick="toggleDropdown(event, this)">Products</a></li>
                         <li><a href="contact.html">Contact Us</a></li>
                     </ul>
                 </div>
@@ -572,4 +572,5 @@
 </body>
 
 </html>
+
 
