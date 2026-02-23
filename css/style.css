@@ -38,32 +38,32 @@
 /* ===========================
    LIGHT MODE overrides
 =========================== */
-body.light-mode {
-    --nav-bg: rgba(255, 255, 255, 0.92);
-    --nav-border: rgba(0, 0, 0, 0.08);
-    --nav-link: #374151;
-    --nav-link-hover: #0d9488;
-    --nav-active-bg: rgba(13, 148, 136, 0.1);
-    --nav-active-color: #0d9488;
-    --dropdown-bg: #ffffff;
-    --dropdown-border: #e2e8f0;
-    --dropdown-text: #374151;
-    --dropdown-hover-bg: #f0fdfb;
-    --toggle-bg: rgba(0, 0, 0, 0.06);
-    --toggle-color: #1e3a5f;
-    --primary: #0d9488;
-    --primary-hover: #0f766e;
 
-    --bg-dark: #f1f5f9;
-    --body-bg: #f8fafc;
-    --text-white: #1e293b;
-    --text-gray: #64748b;
-    --border-color: #e2e8f0;
-    --card-bg: #ffffff;
-    --section-alt: #f1f5f9;
-    background-color: #f8fafc;
-    color: #1e293b;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===========================
+   LIGHT MODE overrides
+=========================== */
+
 
 * {
     margin: 0;
@@ -237,27 +237,9 @@ header {
     padding-left: 18px;
 }
 
-/* --- Theme Toggle Button --- */
-.theme-toggle {
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    background: var(--toggle-bg);
-    color: var(--toggle-color);
-    cursor: pointer;
-    font-size: 1.1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid var(--nav-border);
-    transition: background 0.3s, color 0.3s, transform 0.3s, border-color 0.3s;
-    flex-shrink: 0;
-}
 
-.theme-toggle:hover {
-    transform: rotate(20deg) scale(1.1);
-    background: rgba(45, 212, 191, 0.15);
-}
+
+
 
 /* Hero Section */
 .hero {
@@ -3171,6 +3153,7 @@ footer {
     }
 }
 
+<<<<<<< HEAD
 /* --- Theme Contrast Fixes (Antigravity) --- */
 body.light-mode .hero h1,
 body.light-mode .company-name-hero,
@@ -3205,4 +3188,7 @@ body.light-mode .f-title,
 body.light-mode .cert-card h3 {
     color: var(--text-white);
 }
+=======
+
+>>>>>>> dd2ce491680de1d483394c05fe89e030eed41e72
 

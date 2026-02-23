@@ -45,15 +45,14 @@
                     </div>
                 </li>
                 <li><a href="contact.html">Contact</a></li>
-                <li><a href="admin-login.html" class="nav-login-btn">Login <i class="fas fa-sign-in-alt"></i></a></li>
+                                <li><a href="admin-login.html" class="nav-login-btn">Login <i class="fas fa-sign-in-alt"></i></a></li>
             </ul>
-            <div class="theme-toggle">
-                <i class="fas fa-sun"></i>
-            </div>
+
+            
         </div>
     </header>
 
-    <div class="page-header">
+>
         <div class="container">
             <h1 data-aos="fade-down">Chemical Trading</h1>
             <p data-aos="fade-up" data-aos-delay="200">Devseas Global offers a wide range of high-quality chemical
@@ -333,29 +332,23 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 1000, once: false, mirror: true, offset: 100 });
-        (function () {
-            const toggle = document.querySelector('.theme-toggle');
-            const body = document.body;
-            const ICON_DARK = '<i class="fas fa-moon"></i>';
-            const ICON_LIGHT = '<i class="fas fa-sun"></i>';
-            if (localStorage.getItem('theme') === 'light') {
-                body.classList.add('light-mode');
-                if (toggle) toggle.innerHTML = ICON_DARK;
-            } else { if (toggle) toggle.innerHTML = ICON_LIGHT; }
-            if (toggle) {
-                toggle.addEventListener('click', () => {
-                    body.classList.toggle('light-mode');
-                    const isLight = body.classList.contains('light-mode');
-                    localStorage.setItem('theme', isLight ? 'light' : 'dark');
-                    toggle.innerHTML = isLight ? ICON_DARK : ICON_LIGHT;
-                });
-            }
-        })();
+        
     </script>
 
+    
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+
 
 
 
