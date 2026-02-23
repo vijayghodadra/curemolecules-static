@@ -16,6 +16,29 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // --- Theme Toggle Logic ---
+    const themeToggle = document.querySelector('.theme-toggle');
+    const body = document.body;
+    const ICON_DARK = '<i class="fas fa-moon"></i>';
+    const ICON_LIGHT = '<i class="fas fa-sun"></i>';
+
+    // Apply saved preference immediately
+    if (localStorage.getItem('theme') === 'light') {
+        body.classList.add('light-mode');
+        if (themeToggle) themeToggle.innerHTML = ICON_DARK;
+    } else {
+        if (themeToggle) themeToggle.innerHTML = ICON_LIGHT;
+    }
+
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('light-mode');
+            const isLight = body.classList.contains('light-mode');
+            localStorage.setItem('theme', isLight ? 'light' : 'dark');
+            themeToggle.innerHTML = isLight ? ICON_DARK : ICON_LIGHT;
+        });
+    }
 });
 
 // Mobile Dropdown Toggle (Global function called by onclick)

@@ -19,14 +19,14 @@
                 <img src="assets/images/DEVSEAS logo.png" alt="DevSeas Global" class="site-logo"
                     style="height: 50px; width: auto;">
             </a>
-                        <div class="menu-toggle" id="mobile-menu">
+            <div class="menu-toggle" id="mobile-menu">
                 <i class="fas fa-bars"></i>
             </div>
             <ul class="nav-menu">
                 <li><a href="index.html">Home</a></li>
                 <li class="nav-item">
-                    <a href="products.html" class="active" onclick="toggleDropdown(event, this)">Products <i class="fas fa-chevron-down"
-                            style="font-size: 0.7em;"></i></a>
+                    <a href="products.html" class="active" onclick="toggleDropdown(event, this)">Products <i
+                            class="fas fa-chevron-down" style="font-size: 0.7em;"></i></a>
                     <div class="dropdown-menu">
                         <a href="products.html?category=all" class="dropdown-item">All Products</a>
                         <a href="products.html?category=antacids" class="dropdown-item">Antacids & Laxatives</a>
@@ -38,7 +38,8 @@
                 </li>
                 <li><a href="about.html">About Us</a></li>
                 <li class="nav-item">
-                    <a href="services.html" onclick="toggleDropdown(event, this)">Services <i class="fas fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <a href="services.html" onclick="toggleDropdown(event, this)">Services <i
+                            class="fas fa-chevron-down" style="font-size: 0.7em;"></i></a>
                     <div class="dropdown-menu">
                         <a href="services.html" class="dropdown-item">Chemical Trading</a>
                         <a href="quality.html" class="dropdown-item">Quality Assurance</a>
@@ -46,14 +47,15 @@
                     </div>
                 </li>
                 <li><a href="contact.html">Contact</a></li>
-                                <li><a href="admin-login.html" class="nav-login-btn">Login <i class="fas fa-sign-in-alt"></i></a></li>
             </ul>
 
-            
+            <div class="theme-toggle">
+                <i class="fas fa-sun"></i>
+            </div>
         </div>
     </header>
 
->
+    <div class="page-header">
         <div class="container">
             <h1>Our Products</h1>
             <p>We manufacture a wide range of high-quality Pharmaceutical APIs (Active Pharmaceutical Ingredients) and
@@ -572,22 +574,7 @@
             filterProducts();
         });
     </script>
-    
+
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
