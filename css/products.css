@@ -2,7 +2,7 @@
 
 /* Filter Section */
 .products-filter-section {
-    background-color: #1e293b;
+    background-color: var(--card-bg);
     padding: 30px;
     border-radius: 12px;
     margin-bottom: 40px;
@@ -33,7 +33,7 @@
 
 .search-input {
     width: 100%;
-    background-color: #0f172a;
+    background-color: var(--bg-dark);
     border: 1px solid var(--border-color);
     padding: 12px 20px;
     border-radius: 6px;
@@ -50,7 +50,7 @@
 
 .filter-select {
     width: 100%;
-    background-color: #0f172a;
+    background-color: var(--bg-dark);
     border: 1px solid var(--border-color);
     padding: 12px 20px;
     border-radius: 6px;
@@ -85,7 +85,7 @@
 }
 
 .view-btn {
-    background-color: #1e293b;
+    background-color: var(--card-bg);
     border: 1px solid var(--border-color);
     color: var(--text-gray);
     width: 40px;
@@ -100,14 +100,14 @@
 
 .view-btn.active,
 .view-btn:hover {
-    background-color: #0f172a;
+    background-color: var(--bg-dark);
     color: var(--primary);
     border-color: var(--primary);
 }
 
 /* Enhanced Product Card */
 .product-card-enhanced {
-    background-color: #1e293b;
+    background-color: var(--card-bg);
     border: 1px solid var(--border-color);
     /* Dark border */
     border-radius: 12px;
@@ -177,7 +177,7 @@
 .pc-meta {
     margin-bottom: 15px;
     font-size: 0.85rem;
-    color: #cbd5e1;
+    color: var(--text-gray);
 }
 
 .pc-meta div {
@@ -209,8 +209,8 @@
 }
 
 .app-tag {
-    background-color: #0f172a;
-    color: #94a3b8;
+    background-color: var(--bg-dark);
+    color: var(--text-gray);
     /* Muted text */
     padding: 6px 12px;
     border-radius: 4px;
